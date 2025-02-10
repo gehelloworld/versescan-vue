@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import BaseButton from '@/components/ui/BaseButton.vue'; 
+import BaseButton from '@/components/ui/BaseButton.component.vue'; 
 import googleIcon from '@/assets/icons/google-icon.png';  
 import { environment } from '@/environments/environment';
 
