@@ -1,6 +1,14 @@
 <script lang="ts" setup>
 import BaseButton from '@/components/ui/BaseButton.vue'; 
-import googleIcon from '@/assets/icons/google-icon.png';    
+import googleIcon from '@/assets/icons/google-icon.png';  
+import { environment } from '@/environments/environment';
+
+const {backendUrl} = environment.app;
+
+const handleLogin = () => {
+
+  window.location.href = `${backendUrl}/api/auth/google`;  
+};
 </script>
 
 <template>
@@ -11,6 +19,7 @@ import googleIcon from '@/assets/icons/google-icon.png';
       :icon="googleIcon"
       iconAlt="Google Icon"
       label="Sign in with Google"
+      @click="handleLogin"
     />
   </template>
   
