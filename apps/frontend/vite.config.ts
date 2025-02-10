@@ -2,15 +2,11 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-    vueJsx(),
-    vueDevTools(),
   ],
   server: { port: 3000 },
   resolve: {
@@ -18,4 +14,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  css: {
+    preprocessorOptions: {
+      less: {
+        // inject global.less into every Less file automatically
+        additionalData: '@import "@/styles/global.less";',
+        // Optionally enable JavaScript in Less if needed
+        javascriptEnabled: true,
+      }
+    }
+  }
 })

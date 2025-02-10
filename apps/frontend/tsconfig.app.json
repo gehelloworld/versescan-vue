@@ -6,7 +6,6 @@
     "src/**/*.vue"
   ],
   "exclude": [
-    "**/TheWelcome.vue",
     "src/**/__tests__/*"
   ],
   "compilerOptions": {
