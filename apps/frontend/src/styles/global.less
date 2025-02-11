@@ -2,16 +2,17 @@
 
 
 @primary-color: #f8fbf4;
+@text-color: #04192d;
 
 @background-color: #f8fafc;
 @font-family: "Arial, sans-serif";
 // Font Sizes
-@font-size-small: 0.875rem; // 14px
+@font-size-small: 0.875rem; 
 @font-size-base: 1rem;      // 16px (standard reading size)
-@font-size-medium: 1.2rem;  // 19.2px
-@font-size-large: 2.6rem;   // 41.6px
-@font-size-xl: 3rem;        // 48px
-@font-size-xxl: 4rem;       // 64px
+@font-size-medium: 1.2rem;  
+@font-size-large: 2.2rem;   
+@font-size-xl: 3rem;        
+@font-size-xxl: 4rem;       
 
 // Global resets (optional)
 *,
@@ -44,11 +45,21 @@ body {
   align-items: center;
 }
 
+.column-flex {
+  display: flex;
+  flex-direction: column;
+} 
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+} 
+
 h1 {
   font-weight: 500;
   font-size: @font-size-large;
   position: relative;
-  margin-top: -10px;
+  color: @text-color;
 }
 
 h3 {
