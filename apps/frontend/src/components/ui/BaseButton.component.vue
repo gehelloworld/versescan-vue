@@ -28,16 +28,10 @@
   
   const props = defineProps<BaseButtonProps>();
   
-  /**
-   * Map each variant to a custom class name defined in Less.
-   */
   const variantClasses: Record<string, string> = {
     primary: 'base-button--primary',
   };
   
-  /**
-   * Compute the variant class based on the prop.
-   */
   const variantClass = computed(() => {
     return props.variant && variantClasses[props.variant] ? variantClasses[props.variant] : '';
   });
@@ -56,17 +50,18 @@
     font-weight: bold;
     border-radius: 0.25rem;
     transition: background-color 0.2s ease, opacity 0.2s ease;
-    background-color: #ccc;  // Default background
-    color: #000;           // Default text color
-  
+    background-color: @primary-color;
+    color: @text-color;     
+    margin: 0.25rem;
+    
     &:hover {
       opacity: 0.8;
     }
   
     .icon {
-      width: 1.25rem;   // approximately 20px
+      width: 1.25rem;  
       height: 1.25rem;
-      margin-right: 0.5rem; // spacing between icon and text
+      margin-right: 0.5rem; 
     }
   }
   
@@ -76,7 +71,7 @@
     color: #ffffff;
   
     &:hover {
-      background-color: #1D4ED8; // Darker blue on hover
+      background-color: #1D4ED8; 
     }
   }
   
