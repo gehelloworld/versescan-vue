@@ -1,15 +1,13 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue';
 import { useUserProfileStore } from '@/stores/useProfile.store';
-import ChatInterface from '@/components/ChatInterface.vue';
+import ChatInterface from '@/views/ChatInterface.vue';
 
 const userStore = useUserProfileStore();
 
 // Fetch the profile when the component is mounted.
 onMounted(async () => {
   await userStore.fetchProfile();
-  console.log('Updated userStore.profile:', userStore.profile);
-  console.log('profile pic:', userStore.profile?.profilePicture);
 });
 
 const profileImage = new URL('@/assets/images/profile-img.png', import.meta.url).href;
