@@ -16,7 +16,7 @@
   </template>
   
   <script lang="ts" setup>
-  import { computed, defineProps } from 'vue';
+  import { computed } from 'vue';
   
   interface BaseButtonProps {
     type?: 'button' | 'submit' | 'reset';
