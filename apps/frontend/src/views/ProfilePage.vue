@@ -5,7 +5,6 @@ import ChatInterface from '@/views/ChatInterface.vue';
 
 const userStore = useUserProfileStore();
 
-// Fetch the profile when the component is mounted.
 onMounted(async () => {
   await userStore.fetchProfile();
 });
@@ -43,9 +42,7 @@ const profileImage = new URL('@/assets/images/profile-img.png', import.meta.url)
         <div class="divider"></div>
   
         <!-- Chat interface area -->
-        <div class="chat-interface-container">
           <ChatInterface />
-        </div>
       </div>
     </div>
   </template>
@@ -63,19 +60,20 @@ const profileImage = new URL('@/assets/images/profile-img.png', import.meta.url)
     font-size: 1.5rem;
     text-align: center;
     width: 100%;
+    color: @text-color;
   }
   
   .profile-container {
     width: 100%;
-    max-width: 56rem; // Equivalent to Tailwind max-w-4xl (~56rem)
+    max-width: 56rem; 
     margin: 0 auto;
     background-color: #ffffff;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                0 4px 6px -2px rgba(0, 0, 0, 0.05); // Similar to shadow-lg
-    border-radius: 0.5rem; // rounded-lg
-    height: 90vh;
-    padding: 1rem; // p-8 (2rem)
-    gap: 0.5rem; // space-y-6 (~1.5rem)
+                0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+    border-radius: 0.5rem; 
+    height: 95vh;
+    padding: 1rem; 
+    gap: 0.5rem; 
   }
   
   .profile-header {
@@ -101,10 +99,5 @@ const profileImage = new URL('@/assets/images/profile-img.png', import.meta.url)
     width: 100%;
     height: 0.2rem;
     background-color: #e5e7eb; 
-  }
-  
-  .chat-interface-container {
-    flex-grow: 1;
-    overflow: auto;
   }
   </style>
