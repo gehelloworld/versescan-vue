@@ -13,7 +13,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       jwtFromRequest: ExtractJwt.fromExtractors([
         (req: Request) => {
           const token = req?.cookies?.auth_token || null;
-          this.logger.log(`Extracted token from cookie: ${token}`);
+       //   this.logger.log(`Extracted token from cookie: ${token}`);
           return token;
         },
       ]),
@@ -21,7 +21,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       secretOrKey: configService.getJwtSecret(),
       passReqToCallback: true, // the request is passed to validate
     });
-   // this.logger.log('JwtStrategy initialized');
+    this.logger.log('JwtStrategy initialized');
   }
 
   async validate(req: Request, payload: {
