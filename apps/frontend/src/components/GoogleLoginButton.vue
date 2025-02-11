@@ -2,11 +2,8 @@
 import BaseButton from '@/components/ui/BaseButton.component.vue'; 
 import googleIcon from '@/assets/icons/google-icon.png';  
 import { environment } from '@/environments/environment';
-
 const {backendUrl} = environment.app;
-
 const handleLogin = () => {
-
   window.location.href = `${backendUrl}/api/auth/google`;  
 };
 </script>
