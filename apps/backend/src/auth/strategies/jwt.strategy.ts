@@ -13,30 +13,34 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       jwtFromRequest: ExtractJwt.fromExtractors([
         (req: Request) => {
           const token = req?.cookies?.auth_token || null;
-          this.logger.log(`Extracted token from cookie: ${token}`);
+       //   this.logger.log(`Extracted token from cookie: ${token}`);
           return token;
         },
       ]),
       ignoreExpiration: false,
       secretOrKey: configService.getJwtSecret(),
+      passReqToCallback: true, // the request is passed to validate
     });
     this.logger.log('JwtStrategy initialized');
   }
 
-  async validate(payload: {
+  async validate(req: Request, payload: {
     email: string;
     firstName: string;
     lastName: string;
     profilePicture: string;
     iat: number;
     exp: number;
+    token: string;
   }) {
-    this.logger.log(`Validating payload: ${JSON.stringify(payload)}`);
+    const token = req?.cookies?.auth_token;
+   //  this.logger.log(`Validating payload: ${JSON.stringify(payload)}`);
     return {
       email: payload.email,
       firstName: payload.firstName,
       lastName: payload.lastName,
       profilePicture: payload.profilePicture,
+      accessToken: token,
     };
   }
 }

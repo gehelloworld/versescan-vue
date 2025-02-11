@@ -1,5 +1,4 @@
 <script setup>
-// import GoogleLoginButton from "@/components/GoogleLoginButton.vue";
  import GoogleLoginButton from "@/components/GoogleLoginButton.vue";
 import "@/styles/global.less"
 </script>
@@ -10,9 +9,8 @@ import "@/styles/global.less"
     <h1>
       Welcome to <br class="line-break">VerseScan
     </h1>
-
+  
     <GoogleLoginButton />
-
   </div>
 </template>
 
