@@ -1,0 +1,4 @@
+window.env = {
+  VITE_APP_ENV: '__VITE_APP_ENV__',
+  VITE_APP_BACKEND_VS_URL: '__VITE_APP_BACKEND_VS_URL__',
+  };
