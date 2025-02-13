@@ -1,6 +1,6 @@
 {
-  "name": "vs-frontend",
-  "version": "0.0.3",
+  "name": "frontend",
+  "version": "0.0.4",
   "private": true,
   "author": "GMZhang",
   "type": "module",

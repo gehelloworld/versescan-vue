@@ -43,6 +43,9 @@ export class AuthController {
       httpOnly: true,
       secure: env === 'production',
       sameSite: env === 'production' ? 'none' : 'lax',
+      // todo: deal with 401 when Enhanced Tracking Protection is enabled on Firefox
+      // Set the domain to the App Runner domain in production 
+      // domain: env === 'production' ? '.awsapprunner.com' : undefined,
       maxAge: 3600000, // 1 hour
     });
 

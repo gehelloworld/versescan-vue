@@ -21,7 +21,8 @@ const profileImage = new URL('@/assets/images/profile-img.png', import.meta.url)
   
       <!-- Show error message if present -->
       <div v-else-if="userStore.error" class="status-message">
-        Error fetching profile data: {{ userStore.error }}
+        <!-- todo add reminder to disable Enhanced Tracking Protection on Firefox -->
+        There are some issues fetching profile data, please try again later or disable Enhanced Tracking Protection or use another browser.
       </div>
   
       <!-- Main content when profile is available -->
